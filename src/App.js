@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 class App extends Component {
 
     getDayName(number) {
-        let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        return days[number];
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const months = moment.months();
+        return `${days[number]}, ${months[new Date().getMonth()]}`;
     }
 
     render() {
