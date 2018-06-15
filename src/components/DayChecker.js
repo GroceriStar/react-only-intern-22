@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+import days from '../data/days';
 
 class DayChecker extends Component {
 
     getDayName(number) {
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const months = moment.months();
-        return `${days[number]}, ${months[new Date().getMonth()]}`;
+        return days[number];
     }
 
     render() {
