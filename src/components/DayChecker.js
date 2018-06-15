@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-class App extends Component {
+class DayChecker extends Component {
 
     getDayName(number) {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -17,4 +17,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default DayChecker;
