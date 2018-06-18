@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import DayChecker from './components/DayChecker';
 import Header from './components/Header';
 import MonthChecker from './components/MonthChecker';
-import WeekChecker from './components/WeekChecker';
+import months from './data/months';
 
 class App extends Component {
+    showCalendar() {
+        const calendar = [];
+        for (const month of months) {
+            calendar.push(<MonthChecker month={month} />);
+        }
+        return calendar;
+    }
     render() {
         return (
             <div>
                 <Header />
-                <DayChecker />
-                <WeekChecker />
-                <MonthChecker />
+                { this.showCalendar() }
             </div>
         );
     }
