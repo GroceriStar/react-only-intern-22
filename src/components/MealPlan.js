@@ -6,6 +6,7 @@ class MealPlan extends Component {
         meal: '',
         meals: ['Pizza']
     };
+    
     renderMeals() {
         return _.map(this.state.meals, meal => <li>{meal}</li>);
     }
