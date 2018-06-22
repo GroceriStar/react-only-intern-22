@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MonthChecker from './components/MonthChecker';
 import months from './data/months';
-import MealPlan from './components/MealPlan';
+import Meal from './components/Meal';
 
 class App extends Component {
     showCalendar() {
@@ -15,7 +15,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <MealPlan />
+                <Meal />
             </div>
         );
     }

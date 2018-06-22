@@ -19,7 +19,25 @@ class Meal extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
+    componentWillMount() {
+        const meals = [
+            {
+                name: 'Avocado',
+                description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                steps: 'Just cook!',
+                url: 'http://via.placeholder.com/350x150'
+            },
+            {
+                name: 'Pizza',
+                description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                steps: `It's magic!`,
+                url: 'http://via.placeholder.com/350x150'
+            },
+        ];
+        this.setState({
+            meals: meals
+        });
+    }
 
     renderMeals() {
         return _.map(this.state.meals, (meal, index) => 
