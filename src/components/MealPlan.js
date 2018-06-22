@@ -23,12 +23,23 @@ class MealPlan extends Component {
         }
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const meal = this.state.meal;
+        this.setState({
+          meals: [...this.state.meals, meal],
+          meal: ""
+        });
+    }
+
     render() {
         return(
             <div>
                 <h2>Today, you should eat this:</h2>
-                <input type="text" onChange={e => this.setState({meal: e.target.value})} value={this.state.meal}/>
-                <button onClick={() => this.setState({meals: [...this.state.meals, this.state.meal]})}>Add Meal</button>
+                <form onSubmit={e => this.handleSubmit(e)}>
+                    <input type="text" onChange={e => this.setState({meal: e.target.value})} value={this.state.meal}/>
+                    <button type="submit">Add Meal</button>
+                </form>
                     {this.state.showAddMealMessage ? <p>New meal added</p> : null}
                 <ul>
                     {this.renderMeals()}
