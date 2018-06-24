@@ -4,6 +4,7 @@ import months from './data/months';
 import MealPlan from './components/MealPlan';
 
 class App extends Component {
+  
     showCalendar() {
         const calendar = [];
         for (const month of months) {

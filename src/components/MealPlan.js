@@ -7,13 +7,15 @@ class MealPlan extends Component {
         meals: [],
         showAddMealMessage: false
     };
-    
+
     renderMeals() {
         return _.map(this.state.meals, meal => <li>{meal}</li>);
     }
 
     componentWillMount() {
-        this.setState({meals: ["Eggs with bacon", "Spaghetti carbonara", "Oatmeal"]});
+        this.setState({
+          meals: ["Eggs with bacon", "Spaghetti carbonara", "Oatmeal"]
+        });
     }
 
     componentDidUpdate(prevProps, prevState) {
