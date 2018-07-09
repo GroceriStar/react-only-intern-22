@@ -25,13 +25,23 @@ class Meal extends Component {
                 name: 'Avocado',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
                 steps: 'Just cook!',
-                url: 'http://via.placeholder.com/350x150'
+                image: 'http://via.placeholder.com/350x150',
+                recipe_url: '',
+                ingredients: [
+                    'Ingredient 1', 'Ingredient 2', 'Ingredient 3'
+                ],
+                directions: []
             },
             {
                 name: 'Pizza',
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
                 steps: `It's magic!`,
-                url: 'http://via.placeholder.com/350x150'
+                image: 'http://via.placeholder.com/350x150',
+                recipe_url: '',
+                ingredients: [
+                    'Ingredient 4', 'Ingredient 5', 'Ingredient 6'
+                ],
+                directions: []
             },
         ];
         this.setState({
@@ -39,14 +49,26 @@ class Meal extends Component {
         });
     }
 
+    renderIngredients(meal) {
+        return _.map(meal.ingredients, (ingredient) => 
+            <li className="list-group-item">{ingredient}</li>
+        );
+    }
+
     renderMeals() {
         return _.map(this.state.meals, (meal, index) => 
             <div className="col-3" key={index}>
                 <div className="card">
-                    <img className="card-img-top" src={meal.url} alt={meal.name}/>
+                    <img className="card-img-top" src={meal.image} alt={meal.name}/>
                     <div className="card-body">
                         <h5 className="card-title">{meal.name}</h5>
                         <p className="card-text">{meal.description}</p>
+                    </div>
+                    <div>
+                        <p className="text-center">Ingredients</p>
+                        <ul class="list-group list-group-flush">
+                            {this.renderIngredients(meal)}
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -80,7 +102,7 @@ class Meal extends Component {
                 name: '',
                 description: '',
                 steps: '',
-                url: ''
+                image: ''
             }
         });
     }
